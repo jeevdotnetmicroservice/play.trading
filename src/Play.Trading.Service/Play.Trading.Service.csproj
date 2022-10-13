@@ -2,6 +2,9 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
+    <PackageDescription>Common libraries used by Play Economy services.</PackageDescription>
+    <Authors>Jeev</Authors>
+    <Company>.NET Microservices</Company>
   </PropertyGroup>
 
   <ItemGroup>
@@ -9,10 +12,10 @@
     <PackageReference Include="MassTransit.AspNetCore" Version="7.2.1" />
     <PackageReference Include="MassTransit.MongoDB" Version="7.2.1" />
     <PackageReference Include="MassTransit.RabbitMQ" Version="7.2.1" />
-    <PackageReference Include="Play.Catalog.Contracts" Version="1.0.1" />
-    <PackageReference Include="Play.Common" Version="1.0.11" />
-    <PackageReference Include="Play.Identity.Contracts" Version="1.0.3" />
-    <PackageReference Include="Play.Inventory.Contracts" Version="1.0.3" />
+    <PackageReference Include="Play.Catalog.Contracts" Version="1.0.3" />
+    <PackageReference Include="Play.Common" Version="1.0.12" />
+    <PackageReference Include="Play.Identity.Contracts" Version="1.0.4" />
+    <PackageReference Include="Play.Inventory.Contracts" Version="1.0.4" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
   </ItemGroup>
 
