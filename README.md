@@ -3,7 +3,7 @@ Play Economy Play.Trading microservice.
 
 ## Build the docker image
 ```powershell
-$version="1.0.1"
+$version="1.0.2"
 $rpname="jeevplayeconomy"
 $env:GH_OWNER="jeevdotnetmicroservice"
 $env:GH_PAT="[PAT HERE]"
