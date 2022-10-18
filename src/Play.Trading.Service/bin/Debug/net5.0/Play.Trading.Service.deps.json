@@ -33,11 +33,9 @@
     ".NETCoreApp,Version=v5.0": {
       "Play.Trading.Service/1.0.0": {
         "dependencies": {
-          "MassTransit": "7.3.0",
-          "MassTransit.AspNetCore": "7.3.0",
           "MassTransit.MongoDb": "7.3.0",
           "Play.Catalog.Contracts": "1.0.3",
-          "Play.Common": "1.0.14",
+          "Play.Common": "1.0.15",
           "Play.Identity.Contracts": "1.0.4",
           "Play.Inventory.Contracts": "1.0.4",
           "Swashbuckle.AspNetCore": "5.6.3",
@@ -874,7 +872,7 @@
           "lib/net5.0/Play.Catalog.Contracts.dll": {}
         }
       },
-      "Play.Common/1.0.14": {
+      "Play.Common/1.0.15": {
         "dependencies": {
           "MassTransit.AspNetCore": "7.3.0",
           "MassTransit.Azure.ServiceBus.Core": "7.3.0",
@@ -3420,12 +3418,12 @@
       "path": "play.catalog.contracts/1.0.3",
       "hashPath": "play.catalog.contracts.1.0.3.nupkg.sha512"
     },
-    "Play.Common/1.0.14": {
+    "Play.Common/1.0.15": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-M+WcTvyP1DVlycSAkxUscJiqc3IL3omn347kh23DuDTmDjRDq+dNcxlABOJqA58MvWPo028/mk7gVyPr8POzZw==",
-      "path": "play.common/1.0.14",
-      "hashPath": "play.common.1.0.14.nupkg.sha512"
+      "sha512": "sha512-1t7dzO9kRkhI5nJ3KDbG8u9PzLGd22tdgF5x+GomMiAr5aeANbvINZuM05f5iQXg5xOYEJyPyAoDqqtkoaw9hw==",
+      "path": "play.common/1.0.15",
+      "hashPath": "play.common.1.0.15.nupkg.sha512"
     },
     "Play.Identity.Contracts/1.0.4": {
       "type": "package",
