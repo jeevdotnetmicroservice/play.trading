@@ -24,10 +24,15 @@ az acr login --name $rpname
 docker push "$rpname.azurecr.io/play.trading:$version"
 ```
 
+## Create the kubernetes namespace
+```powershell
+$namespace="trading"
+kubectl create namespace $namespace
+```
+
 ### Creating the pod managed identity
 ```powershell
 $rgname="playeconomy"
-$namespace="trading"
 az identity create --resource-group $rgname --name $namespace
 $IDENTITY_RESOURCE_ID=az identity show -g $rgname -n $namespace --query id -otsv
 
@@ -38,4 +43,9 @@ az aks pod-identity add --resource-group $rgname --cluster-name $rpname --namesp
 ```powershell
 $IDENTITY_CLIENT_ID=az identity show -g $rgname -n $namespace --query clientId -otsv
 az keyvault set-policy -n $rpname --secret-permissions get list --spn $IDENTITY_CLIENT_ID
+```
+
+## Create the Kubernetes pod
+```poswershell
+kubectl apply -f .\kubernetes\trading.yaml -n $namespace
 ```
