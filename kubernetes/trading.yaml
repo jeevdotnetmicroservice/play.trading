@@ -51,4 +51,4 @@ spec:
     app: trading
   ports:
     - port: 80
-      targetPort: 5007
+      targetPort: 5006
