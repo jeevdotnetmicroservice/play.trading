@@ -64,3 +64,6 @@ helm upgrade trading-service oci://$rpname.azurecr.io/helm/microservice --versio
 
 ## Required repository secrets for GitHub workflow
 GH_PAT: Created in GitHub user profile --> Settings --> Developer settings --> Personal access token
+AZURE_CLIENT_ID: From AAD App Registration
+AZURE_SUBSCRIPTION_ID: From Azure Portal subscription
+AZURE_TENAN_ID: From Azure AAD properties page
