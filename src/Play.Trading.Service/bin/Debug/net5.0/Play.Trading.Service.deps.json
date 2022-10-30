@@ -35,7 +35,7 @@
         "dependencies": {
           "MassTransit.MongoDb": "7.3.0",
           "Play.Catalog.Contracts": "1.0.3",
-          "Play.Common": "1.0.15",
+          "Play.Common": "1.0.16",
           "Play.Identity.Contracts": "1.0.4",
           "Play.Inventory.Contracts": "1.0.4",
           "Swashbuckle.AspNetCore": "5.6.3",
@@ -342,7 +342,7 @@
           "lib/netstandard2.0/Automatonymous.dll": {}
         }
       },
-      "Azure.Core/1.21.0": {
+      "Azure.Core/1.25.0": {
         "dependencies": {
           "Microsoft.Bcl.AsyncInterfaces": "5.0.0",
           "System.Diagnostics.DiagnosticSource": "4.7.1",
@@ -354,8 +354,8 @@
         },
         "runtime": {
           "lib/net5.0/Azure.Core.dll": {
-            "assemblyVersion": "1.21.0.0",
-            "fileVersion": "1.2100.21.55306"
+            "assemblyVersion": "1.25.0.0",
+            "fileVersion": "1.2500.22.33004"
           }
         },
         "compile": {
@@ -376,9 +376,45 @@
           "lib/netstandard2.0/Azure.Core.Amqp.dll": {}
         }
       },
+      "Azure.Extensions.AspNetCore.Configuration.Secrets/1.2.2": {
+        "dependencies": {
+          "Azure.Core": "1.25.0",
+          "Azure.Security.KeyVault.Secrets": "4.2.0",
+          "Microsoft.Extensions.Configuration": "5.0.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Azure.Extensions.AspNetCore.Configuration.Secrets.dll": {
+            "assemblyVersion": "1.2.2.0",
+            "fileVersion": "1.200.222.20502"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/Azure.Extensions.AspNetCore.Configuration.Secrets.dll": {}
+        }
+      },
+      "Azure.Identity/1.7.0": {
+        "dependencies": {
+          "Azure.Core": "1.25.0",
+          "Microsoft.Identity.Client": "4.39.0",
+          "Microsoft.Identity.Client.Extensions.Msal": "2.19.3",
+          "System.Memory": "4.5.4",
+          "System.Security.Cryptography.ProtectedData": "4.7.0",
+          "System.Text.Json": "5.0.2",
+          "System.Threading.Tasks.Extensions": "4.5.4"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Azure.Identity.dll": {
+            "assemblyVersion": "1.7.0.0",
+            "fileVersion": "1.700.22.46903"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/Azure.Identity.dll": {}
+        }
+      },
       "Azure.Messaging.ServiceBus/7.5.0": {
         "dependencies": {
-          "Azure.Core": "1.21.0",
+          "Azure.Core": "1.25.0",
           "Azure.Core.Amqp": "1.2.0",
           "Microsoft.Azure.Amqp": "2.5.6",
           "Microsoft.Bcl.AsyncInterfaces": "5.0.0",
@@ -392,6 +428,23 @@
         },
         "compile": {
           "lib/netstandard2.0/Azure.Messaging.ServiceBus.dll": {}
+        }
+      },
+      "Azure.Security.KeyVault.Secrets/4.2.0": {
+        "dependencies": {
+          "Azure.Core": "1.25.0",
+          "System.Memory": "4.5.4",
+          "System.Text.Json": "5.0.2",
+          "System.Threading.Tasks.Extensions": "4.5.4"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Azure.Security.KeyVault.Secrets.dll": {
+            "assemblyVersion": "4.2.0.0",
+            "fileVersion": "4.200.21.31503"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/Azure.Security.KeyVault.Secrets.dll": {}
         }
       },
       "DnsClient/1.4.0": {
@@ -625,6 +678,32 @@
         }
       },
       "Microsoft.Extensions.Primitives/5.0.0": {},
+      "Microsoft.Identity.Client/4.39.0": {
+        "runtime": {
+          "lib/netcoreapp2.1/Microsoft.Identity.Client.dll": {
+            "assemblyVersion": "4.39.0.0",
+            "fileVersion": "4.39.0.0"
+          }
+        },
+        "compile": {
+          "lib/netcoreapp2.1/Microsoft.Identity.Client.dll": {}
+        }
+      },
+      "Microsoft.Identity.Client.Extensions.Msal/2.19.3": {
+        "dependencies": {
+          "Microsoft.Identity.Client": "4.39.0",
+          "System.Security.Cryptography.ProtectedData": "4.7.0"
+        },
+        "runtime": {
+          "lib/netcoreapp2.1/Microsoft.Identity.Client.Extensions.Msal.dll": {
+            "assemblyVersion": "2.19.3.0",
+            "fileVersion": "2.19.3.0"
+          }
+        },
+        "compile": {
+          "lib/netcoreapp2.1/Microsoft.Identity.Client.Extensions.Msal.dll": {}
+        }
+      },
       "Microsoft.IdentityModel.JsonWebTokens/6.7.1": {
         "dependencies": {
           "Microsoft.IdentityModel.Tokens": "6.7.1"
@@ -872,8 +951,10 @@
           "lib/net5.0/Play.Catalog.Contracts.dll": {}
         }
       },
-      "Play.Common/1.0.15": {
+      "Play.Common/1.0.16": {
         "dependencies": {
+          "Azure.Extensions.AspNetCore.Configuration.Secrets": "1.2.2",
+          "Azure.Identity": "1.7.0",
           "MassTransit.AspNetCore": "7.3.0",
           "MassTransit.Azure.ServiceBus.Core": "7.3.0",
           "MassTransit.RabbitMQ": "7.3.0",
@@ -1323,6 +1404,25 @@
           "System.Runtime": "4.1.0",
           "System.Threading": "4.0.11",
           "System.Threading.Tasks": "4.0.11"
+        }
+      },
+      "System.Security.Cryptography.ProtectedData/4.7.0": {
+        "runtime": {
+          "lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll": {
+            "assemblyVersion": "4.0.5.0",
+            "fileVersion": "4.700.19.56404"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll": {
+            "rid": "win",
+            "assetType": "runtime",
+            "assemblyVersion": "4.0.5.0",
+            "fileVersion": "4.700.19.56404"
+          }
+        },
+        "compile": {
+          "ref/netstandard2.0/System.Security.Cryptography.ProtectedData.dll": {}
         }
       },
       "System.Security.Cryptography.X509Certificates/4.1.0": {
@@ -3096,12 +3196,12 @@
       "path": "automatonymous/5.1.3",
       "hashPath": "automatonymous.5.1.3.nupkg.sha512"
     },
-    "Azure.Core/1.21.0": {
+    "Azure.Core/1.25.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-YR+BVLXjcbLZhRDzN9s1wo0HnpFurXzhdiFDQocRhAppYTEAp475S75UqnmCLxcVgZJP3N3Sn1i9QowdmvT7Vg==",
-      "path": "azure.core/1.21.0",
-      "hashPath": "azure.core.1.21.0.nupkg.sha512"
+      "sha512": "sha512-X8Dd4sAggS84KScWIjEbFAdt2U1KDolQopTPoHVubG2y3CM54f9l6asVrP5Uy384NWXjsspPYaJgz5xHc+KvTA==",
+      "path": "azure.core/1.25.0",
+      "hashPath": "azure.core.1.25.0.nupkg.sha512"
     },
     "Azure.Core.Amqp/1.2.0": {
       "type": "package",
@@ -3110,12 +3210,33 @@
       "path": "azure.core.amqp/1.2.0",
       "hashPath": "azure.core.amqp.1.2.0.nupkg.sha512"
     },
+    "Azure.Extensions.AspNetCore.Configuration.Secrets/1.2.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-veuqVD+Xr9/EOj9vTXBKvoh2GqObb6r+oK99L6rasJDOAJCTwwf6JqcOqXeNGnIDP0k0CcjfQSN4tY4nC7EHkg==",
+      "path": "azure.extensions.aspnetcore.configuration.secrets/1.2.2",
+      "hashPath": "azure.extensions.aspnetcore.configuration.secrets.1.2.2.nupkg.sha512"
+    },
+    "Azure.Identity/1.7.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-eHEiCO/8+MfNc9nH5dVew/+FvxdaGrkRL4OMNwIz0W79+wtJyEoeRlXJ3SrXhoy9XR58geBYKmzMR83VO7bcAw==",
+      "path": "azure.identity/1.7.0",
+      "hashPath": "azure.identity.1.7.0.nupkg.sha512"
+    },
     "Azure.Messaging.ServiceBus/7.5.0": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-9bGuZ8Rm0IePVCKxuhkk5vWMESTR9DfxxQx7dK/c8A1IHD3lwDm02v2it+DYiQifxwpV96bwIaobwPhcHhE90A==",
       "path": "azure.messaging.servicebus/7.5.0",
       "hashPath": "azure.messaging.servicebus.7.5.0.nupkg.sha512"
+    },
+    "Azure.Security.KeyVault.Secrets/4.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ujVMKVzEtVNQom5A0iEXSDovNGoSidV0RO5QlOBFfcIZlXwFnBmO5OhOfS4D/F1gbMNCCFS3re39qd/Bgh6+QQ==",
+      "path": "azure.security.keyvault.secrets/4.2.0",
+      "hashPath": "azure.security.keyvault.secrets.4.2.0.nupkg.sha512"
     },
     "DnsClient/1.4.0": {
       "type": "package",
@@ -3292,6 +3413,20 @@
       "path": "microsoft.extensions.primitives/5.0.0",
       "hashPath": "microsoft.extensions.primitives.5.0.0.nupkg.sha512"
     },
+    "Microsoft.Identity.Client/4.39.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-+/y4ELXYqnAbiqhEgFAl3riBbkMeCw8+6+Y8r367bUf6zWhlNUjhm360VsTMBgqbPyfJld5X+cJkDhDCrudezA==",
+      "path": "microsoft.identity.client/4.39.0",
+      "hashPath": "microsoft.identity.client.4.39.0.nupkg.sha512"
+    },
+    "Microsoft.Identity.Client.Extensions.Msal/2.19.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-zVVZjn8aW7W79rC1crioDgdOwaFTQorsSO6RgVlDDjc7MvbEGz071wSNrjVhzR0CdQn6Sefx7Abf1o7vasmrLg==",
+      "path": "microsoft.identity.client.extensions.msal/2.19.3",
+      "hashPath": "microsoft.identity.client.extensions.msal.2.19.3.nupkg.sha512"
+    },
     "Microsoft.IdentityModel.JsonWebTokens/6.7.1": {
       "type": "package",
       "serviceable": true,
@@ -3418,12 +3553,12 @@
       "path": "play.catalog.contracts/1.0.3",
       "hashPath": "play.catalog.contracts.1.0.3.nupkg.sha512"
     },
-    "Play.Common/1.0.15": {
+    "Play.Common/1.0.16": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-1t7dzO9kRkhI5nJ3KDbG8u9PzLGd22tdgF5x+GomMiAr5aeANbvINZuM05f5iQXg5xOYEJyPyAoDqqtkoaw9hw==",
-      "path": "play.common/1.0.15",
-      "hashPath": "play.common.1.0.15.nupkg.sha512"
+      "sha512": "sha512-Y80z0LEDef+GbG8tFFmA7OGHBc4TiiJg642/KWpdvc7xwNNZH1K9dOHhv9/rg7vQTW6n8XwzXliUCQyl5x/cVg==",
+      "path": "play.common/1.0.16",
+      "hashPath": "play.common.1.0.16.nupkg.sha512"
     },
     "Play.Identity.Contracts/1.0.4": {
       "type": "package",
@@ -3767,6 +3902,13 @@
       "sha512": "sha512-Wkd7QryWYjkQclX0bngpntW5HSlMzeJU24UaLJQ7YTfI8ydAVAaU2J+HXLLABOVJlKTVvAeL0Aj39VeTe7L+oA==",
       "path": "system.security.cryptography.primitives/4.0.0",
       "hashPath": "system.security.cryptography.primitives.4.0.0.nupkg.sha512"
+    },
+    "System.Security.Cryptography.ProtectedData/4.7.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ehYW0m9ptxpGWvE4zgqongBVWpSDU/JCFD4K7krxkQwSz/sFQjEXCUqpvencjy6DYDbn7Ig09R8GFffu8TtneQ==",
+      "path": "system.security.cryptography.protecteddata/4.7.0",
+      "hashPath": "system.security.cryptography.protecteddata.4.7.0.nupkg.sha512"
     },
     "System.Security.Cryptography.X509Certificates/4.1.0": {
       "type": "package",
