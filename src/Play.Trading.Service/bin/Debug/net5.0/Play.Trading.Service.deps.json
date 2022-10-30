@@ -35,10 +35,9 @@
         "dependencies": {
           "MassTransit.MongoDb": "7.3.0",
           "Play.Catalog.Contracts": "1.0.3",
-          "Play.Common": "1.0.16",
+          "Play.Common": "1.0.23",
           "Play.Identity.Contracts": "1.0.4",
           "Play.Inventory.Contracts": "1.0.4",
-          "Seq.Extensions.Logging": "6.0.0",
           "Swashbuckle.AspNetCore": "5.6.3",
           "Microsoft.AspNetCore.Antiforgery": "5.0.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions": "5.0.0.0",
@@ -974,7 +973,7 @@
           "lib/net5.0/Play.Catalog.Contracts.dll": {}
         }
       },
-      "Play.Common/1.0.16": {
+      "Play.Common/1.0.23": {
         "dependencies": {
           "Azure.Extensions.AspNetCore.Configuration.Secrets": "1.2.2",
           "Azure.Identity": "1.7.0",
@@ -985,7 +984,8 @@
           "Microsoft.Extensions.Configuration": "5.0.0",
           "Microsoft.Extensions.Configuration.Binder": "5.0.0",
           "Microsoft.Extensions.DependencyInjection": "5.0.1",
-          "MongoDB.Driver": "2.13.2"
+          "MongoDB.Driver": "2.13.2",
+          "Seq.Extensions.Logging": "6.0.0"
         },
         "runtime": {
           "lib/net5.0/Play.Common.dll": {
@@ -3613,12 +3613,12 @@
       "path": "play.catalog.contracts/1.0.3",
       "hashPath": "play.catalog.contracts.1.0.3.nupkg.sha512"
     },
-    "Play.Common/1.0.16": {
+    "Play.Common/1.0.23": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-Y80z0LEDef+GbG8tFFmA7OGHBc4TiiJg642/KWpdvc7xwNNZH1K9dOHhv9/rg7vQTW6n8XwzXliUCQyl5x/cVg==",
-      "path": "play.common/1.0.16",
-      "hashPath": "play.common.1.0.16.nupkg.sha512"
+      "sha512": "sha512-WcDzd9Z3L8CX+TbmOqQQF9aF+TG2w74Sh/srGMwJ4ABgjrrQ3310oResEBlIr880vdPrhkJRV560HxgTCW+OpQ==",
+      "path": "play.common/1.0.23",
+      "hashPath": "play.common.1.0.23.nupkg.sha512"
     },
     "Play.Identity.Contracts/1.0.4": {
       "type": "package",
