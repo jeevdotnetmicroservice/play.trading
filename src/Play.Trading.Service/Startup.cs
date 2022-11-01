@@ -1,6 +1,6 @@
 using System;
 using System.Reflection;
-using GreenPipes;
+using System.Text.Json.Serialization;
 using MassTransit;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -8,7 +8,6 @@ using Microsoft.AspNetCore.SignalR;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using Play.Common.HealthChecks;
 using Play.Common.Identity;
@@ -50,7 +49,7 @@ namespace Play.Trading.Service
             {
                 options.SuppressAsyncSuffixInActionNames = false;
             })
-            .AddJsonOptions(options => options.JsonSerializerOptions.IgnoreNullValues = true);
+            .AddJsonOptions(options => options.JsonSerializerOptions.DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull);
 
             services.AddSwaggerGen(c =>
             {
@@ -129,9 +128,6 @@ namespace Play.Trading.Service
             EndpointConvention.Map<GrantItems>(new Uri(queueSettings.GrantItemsQueueAddress));
             EndpointConvention.Map<DebitGil>(new Uri(queueSettings.DebitGilQueueAddress));
             EndpointConvention.Map<SubtractItems>(new Uri(queueSettings.SubtractItemsQueueAddress));
-
-            services.AddMassTransitHostedService();
-            services.AddGenericRequestClient();
         }
     }
 }
