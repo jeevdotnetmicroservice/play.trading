@@ -36,6 +36,7 @@
           "MassTransit.MongoDb": "8.0.2",
           "OpenTelemetry": "1.2.0",
           "OpenTelemetry.Exporter.Console": "1.2.0",
+          "OpenTelemetry.Exporter.Jaeger": "1.2.0",
           "OpenTelemetry.Extensions.Hosting": "1.0.0-rc9.2",
           "OpenTelemetry.Instrumentation.AspNetCore": "1.0.0-rc9.2",
           "OpenTelemetry.Instrumentation.Http": "1.0.0-rc9.2",
@@ -940,6 +941,21 @@
         },
         "compile": {
           "lib/netstandard2.0/OpenTelemetry.Exporter.Console.dll": {}
+        }
+      },
+      "OpenTelemetry.Exporter.Jaeger/1.2.0": {
+        "dependencies": {
+          "OpenTelemetry": "1.2.0",
+          "System.Threading.Tasks.Extensions": "4.5.4"
+        },
+        "runtime": {
+          "lib/net5.0/OpenTelemetry.Exporter.Jaeger.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.2.0.464"
+          }
+        },
+        "compile": {
+          "lib/net5.0/OpenTelemetry.Exporter.Jaeger.dll": {}
         }
       },
       "OpenTelemetry.Extensions.Hosting/1.0.0-rc9.2": {
@@ -3278,6 +3294,13 @@
       "sha512": "sha512-kAFILHO80lF2OjPJarGQVr5uilnpYd7I8jO1+KZMQQ2d3o5AtLGucLoz9598jVqGTpc+coi2QEWxcqQifWfqbA==",
       "path": "opentelemetry.exporter.console/1.2.0",
       "hashPath": "opentelemetry.exporter.console.1.2.0.nupkg.sha512"
+    },
+    "OpenTelemetry.Exporter.Jaeger/1.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-SKsZxDUUGL5nl5Lb76zVeGBdfo10JJkKVmgzCs1YGItkht7H28DRvIM3jRjcPnwNBOjtQhBbXbLIWGOeUfm2Ng==",
+      "path": "opentelemetry.exporter.jaeger/1.2.0",
+      "hashPath": "opentelemetry.exporter.jaeger.1.2.0.nupkg.sha512"
     },
     "OpenTelemetry.Extensions.Hosting/1.0.0-rc9.2": {
       "type": "package",
