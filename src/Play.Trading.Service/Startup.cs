@@ -9,6 +9,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+using OpenTelemetry.Resources;
+using OpenTelemetry.Trace;
 using Play.Common.HealthChecks;
 using Play.Common.Identity;
 using Play.Common.Logging;
@@ -61,6 +63,19 @@ namespace Play.Trading.Service
                     .AddSingleton<MessageHub>()
                     .AddSignalR();
             services.AddSeqLogging(Configuration);
+            services.AddOpenTelemetryTracing(builder => 
+            {
+                var serviceSettings = Configuration.GetSection(nameof(ServiceSettings))
+                                                    .Get<ServiceSettings>();
+                builder.AddSource(serviceSettings.ServiceName)
+                        .AddSource("MassTransit")
+                        .SetResourceBuilder(
+                            ResourceBuilder.CreateDefault()
+                                .AddService(serviceName: serviceSettings.ServiceName))
+                            .AddHttpClientInstrumentation()
+                            .AddAspNetCoreInstrumentation()
+                            .AddConsoleExporter();
+            });
 
         }
 
