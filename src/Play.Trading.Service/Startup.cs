@@ -66,18 +66,8 @@ namespace Play.Trading.Service
                     .AddSignalR();
 
             services.AddSeqLogging(Configuration)
-                    .AddTracing(Configuration);
-
-            services.AddOpenTelemetryMetrics(builder =>
-            {
-                var settings = Configuration.GetSection(nameof(ServiceSettings))
-                                            .Get<ServiceSettings>();
-                builder.AddMeter(settings.ServiceName)
-                        .AddHttpClientInstrumentation()
-                        .AddAspNetCoreInstrumentation()
-                        .AddPrometheusExporter();
-            });
-
+                    .AddTracing(Configuration)
+                    .AddMetrics(Configuration);
 
         }
 

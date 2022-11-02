@@ -34,14 +34,8 @@
       "Play.Trading.Service/1.0.0": {
         "dependencies": {
           "MassTransit.MongoDb": "8.0.2",
-          "OpenTelemetry": "1.2.0",
-          "OpenTelemetry.Exporter.Console": "1.2.0",
-          "OpenTelemetry.Exporter.Jaeger": "1.2.0",
-          "OpenTelemetry.Extensions.Hosting": "1.0.0-rc9.2",
-          "OpenTelemetry.Instrumentation.AspNetCore": "1.0.0-rc9.2",
-          "OpenTelemetry.Instrumentation.Http": "1.0.0-rc9.2",
           "Play.Catalog.Contracts": "1.0.3",
-          "Play.Common": "1.0.25",
+          "Play.Common": "1.0.26",
           "Play.Identity.Contracts": "1.0.4",
           "Play.Inventory.Contracts": "1.0.4",
           "Swashbuckle.AspNetCore": "5.6.3",
@@ -958,6 +952,20 @@
           "lib/net5.0/OpenTelemetry.Exporter.Jaeger.dll": {}
         }
       },
+      "OpenTelemetry.Exporter.Prometheus/1.2.0-rc5": {
+        "dependencies": {
+          "OpenTelemetry": "1.2.0"
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/OpenTelemetry.Exporter.Prometheus.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.2.0.461"
+          }
+        },
+        "compile": {
+          "lib/netcoreapp3.1/OpenTelemetry.Exporter.Prometheus.dll": {}
+        }
+      },
       "OpenTelemetry.Extensions.Hosting/1.0.0-rc9.2": {
         "dependencies": {
           "Microsoft.Extensions.Hosting.Abstractions": "3.1.18",
@@ -1012,7 +1020,7 @@
           "lib/net5.0/Play.Catalog.Contracts.dll": {}
         }
       },
-      "Play.Common/1.0.25": {
+      "Play.Common/1.0.26": {
         "dependencies": {
           "Azure.Extensions.AspNetCore.Configuration.Secrets": "1.2.2",
           "Azure.Identity": "1.7.0",
@@ -1026,6 +1034,7 @@
           "OpenTelemetry": "1.2.0",
           "OpenTelemetry.Exporter.Console": "1.2.0",
           "OpenTelemetry.Exporter.Jaeger": "1.2.0",
+          "OpenTelemetry.Exporter.Prometheus": "1.2.0-rc5",
           "OpenTelemetry.Extensions.Hosting": "1.0.0-rc9.2",
           "OpenTelemetry.Instrumentation.AspNetCore": "1.0.0-rc9.2",
           "OpenTelemetry.Instrumentation.Http": "1.0.0-rc9.2",
@@ -3308,6 +3317,13 @@
       "path": "opentelemetry.exporter.jaeger/1.2.0",
       "hashPath": "opentelemetry.exporter.jaeger.1.2.0.nupkg.sha512"
     },
+    "OpenTelemetry.Exporter.Prometheus/1.2.0-rc5": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-JcgYsuniX/MCMzq8nxTnvdclbRS1wvBe7krUfatUMI+VKEA9S+SeeGEYP2W8b2D2oNCqEPKQN/YJhL2KrHJ1fg==",
+      "path": "opentelemetry.exporter.prometheus/1.2.0-rc5",
+      "hashPath": "opentelemetry.exporter.prometheus.1.2.0-rc5.nupkg.sha512"
+    },
     "OpenTelemetry.Extensions.Hosting/1.0.0-rc9.2": {
       "type": "package",
       "serviceable": true,
@@ -3336,12 +3352,12 @@
       "path": "play.catalog.contracts/1.0.3",
       "hashPath": "play.catalog.contracts.1.0.3.nupkg.sha512"
     },
-    "Play.Common/1.0.25": {
+    "Play.Common/1.0.26": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-Y4f2Tx57NQm1duGULPaSOiycP7VC7/6A6eyEKAk2vifhsGXua6DftrkAGgPbfhjeIsuH4EIJ+zgEsLXIOEUN3Q==",
-      "path": "play.common/1.0.25",
-      "hashPath": "play.common.1.0.25.nupkg.sha512"
+      "sha512": "sha512-Lx1GOSyxBeH4AE6rwuiVbWHdK8K2jJQBoHpb8IwYC7sgu8SRR51SBOHYYeVoCRx+Ma1lycXMOhJiy6MoeYDuGQ==",
+      "path": "play.common/1.0.26",
+      "hashPath": "play.common.1.0.26.nupkg.sha512"
     },
     "Play.Identity.Contracts/1.0.4": {
       "type": "package",
