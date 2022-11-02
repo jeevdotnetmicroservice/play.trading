@@ -40,7 +40,6 @@ namespace Play.Trading.Service.Controllers
                 item => item.UserId == Guid.Parse(userId)
             );
             var user = await usersRepository.GetAsync(Guid.Parse(userId));
-
             var storeDto = new StoreDto(
                 catalogItems.Select(catalogItem =>
                     new StoreItemDto(
