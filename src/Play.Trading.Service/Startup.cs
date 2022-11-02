@@ -16,6 +16,7 @@ using Play.Common.Identity;
 using Play.Common.Logging;
 using Play.Common.MassTransit;
 using Play.Common.MongoDB;
+using Play.Common.OpenTelemetry;
 using Play.Common.Settings;
 using Play.Identity.Contracts;
 using Play.Inventory.Contracts;
@@ -62,26 +63,10 @@ namespace Play.Trading.Service
             services.AddSingleton<IUserIdProvider, UserIdProvider>()
                     .AddSingleton<MessageHub>()
                     .AddSignalR();
-            services.AddSeqLogging(Configuration);
-            services.AddOpenTelemetryTracing(builder => 
-            {
-                var serviceSettings = Configuration.GetSection(nameof(ServiceSettings))
-                                                    .Get<ServiceSettings>();
-                builder.AddSource(serviceSettings.ServiceName)
-                        .AddSource("MassTransit")
-                        .SetResourceBuilder(
-                            ResourceBuilder.CreateDefault()
-                                .AddService(serviceName: serviceSettings.ServiceName))
-                            .AddHttpClientInstrumentation()
-                            .AddAspNetCoreInstrumentation()
-                            .AddJaegerExporter(options =>
-                            {
-                                var serviceSettings = Configuration.GetSection(nameof(JaegerSettings))
-                                                    .Get<JaegerSettings>();
-                                options.AgentHost = serviceSettings.Host;
-                                options.AgentPort = serviceSettings.Port;
-                            });
-            });
+
+            services.AddSeqLogging(Configuration)
+                    .AddTracing(Configuration);
+
 
         }
 
@@ -93,7 +78,7 @@ namespace Play.Trading.Service
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Play.Trading.Service v1"));
-                app.UseCors(builder => 
+                app.UseCors(builder =>
                 {
                     builder.WithOrigins(Configuration[AllowedOriginSetting])
                         .AllowAnyHeader()
@@ -128,7 +113,7 @@ namespace Play.Trading.Service
                 });
 
                 configure.AddConsumers(Assembly.GetEntryAssembly());
-                configure.AddSagaStateMachine<PurchaseStateMachine, PurchaseState>(sagaConfigurator => 
+                configure.AddSagaStateMachine<PurchaseStateMachine, PurchaseState>(sagaConfigurator =>
                 {
                     sagaConfigurator.UseInMemoryOutbox();
                 })
