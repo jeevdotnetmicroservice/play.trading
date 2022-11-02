@@ -9,6 +9,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+using OpenTelemetry.Metrics;
 using OpenTelemetry.Resources;
 using OpenTelemetry.Trace;
 using Play.Common.HealthChecks;
@@ -67,6 +68,16 @@ namespace Play.Trading.Service
             services.AddSeqLogging(Configuration)
                     .AddTracing(Configuration);
 
+            services.AddOpenTelemetryMetrics(builder =>
+            {
+                var settings = Configuration.GetSection(nameof(ServiceSettings))
+                                            .Get<ServiceSettings>();
+                builder.AddMeter(settings.ServiceName)
+                        .AddHttpClientInstrumentation()
+                        .AddAspNetCoreInstrumentation()
+                        .AddPrometheusExporter();
+            });
+
 
         }
 
@@ -86,7 +97,7 @@ namespace Play.Trading.Service
                         .AllowCredentials();
                 });
             }
-
+            app.UseOpenTelemetryPrometheusScrapingEndpoint();
             app.UseHttpsRedirection();
 
             app.UseRouting();
