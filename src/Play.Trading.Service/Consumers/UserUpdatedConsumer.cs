@@ -20,6 +20,7 @@ namespace Play.Trading.Service.Consumers
         {
             var message = context.Message;
             var user = await repository.GetAsync(message.UserId);
+            
             if (user == null)
             {
                 user = new ApplicationUser
