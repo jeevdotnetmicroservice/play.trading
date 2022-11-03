@@ -34,7 +34,7 @@ jobs:
       RP_NAME: jeevplayeconomy
       RG_NAME: playeconomy
       SERVICE_NAME: trading
-      HELM_CHART_VERSION: 0.1.4
+      HELM_CHART_VERSION: 0.1.5
       
     permissions:
       id-token: write
