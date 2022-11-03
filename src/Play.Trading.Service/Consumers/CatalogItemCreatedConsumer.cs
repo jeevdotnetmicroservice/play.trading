@@ -18,7 +18,6 @@ namespace Play.Trading.Service.Consumers
         public async Task Consume(ConsumeContext<CatalogItemCreated> context)
         {
             var message = context.Message;
-
             var item = await repository.GetAsync(message.ItemId);
 
             if (item != null)
