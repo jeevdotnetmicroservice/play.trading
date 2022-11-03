@@ -6,7 +6,7 @@
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
-            "program": "${workspaceFolder}/src/Play.Trading.Service/bin/Debug/net5.0/Play.Trading.Service.dll",
+            "program": "${workspaceFolder}/src/Play.Trading.Service/bin/Debug/net6.0/Play.Trading.Service.dll",
             "args": [],
             "cwd": "${workspaceFolder}/src/Play.Trading.Service",
             "stopAtEntry": false,

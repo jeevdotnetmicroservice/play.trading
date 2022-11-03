@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
-    <TargetFramework>net5.0</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
     <PackageDescription>Common libraries used by Play Economy services.</PackageDescription>
     <Authors>Jeev</Authors>
     <Company>.NET Microservices</Company>
@@ -9,11 +9,11 @@
 
   <ItemGroup>
     <PackageReference Include="MassTransit.MongoDB" Version="8.0.2" />
-    <PackageReference Include="Play.Catalog.Contracts" Version="1.0.3" />
-    <PackageReference Include="Play.Common" Version="1.0.26" />
-    <PackageReference Include="Play.Identity.Contracts" Version="1.0.4" />
+    <PackageReference Include="Play.Catalog.Contracts" Version="1.0.19" />
+    <PackageReference Include="Play.Common" Version="1.0.27" />
+    <PackageReference Include="Play.Identity.Contracts" Version="1.0.31" />
     <PackageReference Include="Play.Inventory.Contracts" Version="1.0.4" />
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
   </ItemGroup>
 
 </Project>
