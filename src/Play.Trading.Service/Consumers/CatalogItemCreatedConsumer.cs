@@ -24,7 +24,6 @@ namespace Play.Trading.Service.Consumers
             {
                 return;
             }
-
             item = new CatalogItem
             {
                 Id = message.ItemId,
